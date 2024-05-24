@@ -56,6 +56,8 @@ const Navbar =  async (props: Props) => {
         </ul>
       </nav>
 
+      {/* navbar */}
+
       <aside className='flex items-center gap-4'>
         <Link
         href="/dashboard"
