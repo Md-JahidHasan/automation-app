@@ -72,7 +72,7 @@ const Navbar =  async (props: Props) => {
         </span>
 
         </Link>
-
+    
         <MenuIcon className='md:hidden'/>
       </aside>
 
