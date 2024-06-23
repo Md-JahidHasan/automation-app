@@ -1,6 +1,8 @@
 import { ContainerScroll } from "@/components/global/container-scroll-animation";
+import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
 import Navbar from "@/components/global/navbar";
 import { Button } from "@/components/ui/button";
+import { clients } from "@/lib/constant";
 import Image from "next/image";
 
 
@@ -30,10 +32,24 @@ export default function Home() {
                   Start For free Today
                 </span>
               </Button>
+              <h1 className=" text-5xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold"> 
+                Automation your work with Fuzzie
+              </h1>
             </div>
           }></ContainerScroll>
         </div>
 
+
+      </section>
+
+      <InfiniteMovingCards
+        className="md:mt-[18rem] mt-[-100px]"
+        items={clients}
+        direction="right"
+        speed="slow"
+      ></InfiniteMovingCards>
+
+      <section>
 
       </section>
      
