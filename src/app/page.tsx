@@ -1,8 +1,11 @@
+import { CardBody, CardContainer, CardItem } from "@/components/global/3d-card";
+import { HeroParallax } from "@/components/global/connect-parallax";
 import { ContainerScroll } from "@/components/global/container-scroll-animation";
 import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
+import { LampComponent, LampContainer } from "@/components/global/lamp";
 import Navbar from "@/components/global/navbar";
 import { Button } from "@/components/ui/button";
-import { clients } from "@/lib/constant";
+import { clients, products } from "@/lib/constant";
 import Image from "next/image";
 
 
@@ -18,7 +21,6 @@ export default function Home() {
 
         </div> */}
         <div className=" absolute inset-0 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]">
-          hg
         </div>
 
         <div className=" flex flex-col mt-[-100px] md:mt-[-50px]">
@@ -50,7 +52,28 @@ export default function Home() {
       ></InfiniteMovingCards>
 
       <section>
+        <HeroParallax
+          products={products}
+        ></HeroParallax>
+      </section>
 
+      <section className=" mt-[-500px]">
+
+        <LampComponent></LampComponent>
+        
+        <div className=" flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 -mt-72">
+          <CardContainer className=" inter-var">
+            <CardBody className=" bg-gray-50 relative group/card dark:hover:shadow-xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
+              <CardItem
+                translateZ="50"
+                className=" text-xl font-bold text-neutral-500 dark:text-white"
+              >
+                Hobby
+                <h1>$0</h1>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+        </div>
       </section>
      
 
