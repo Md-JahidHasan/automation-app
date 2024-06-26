@@ -4,7 +4,7 @@ type Props = {
     children: React.ReactNode
 }
 
-export const Layout = (props: Props) => {
+const Layout = (props: Props) => {
     return (
         <div className='flex overflow-hidden h-screen'>
             <div className='w-full'>
@@ -13,3 +13,5 @@ export const Layout = (props: Props) => {
         </div>
     )
 }
+
+export default Layout
