@@ -1,6 +1,8 @@
+'use client'
 import ProfileForm from '@/components/forms/profile-form';
-import React from 'react'
+import React, { use } from 'react'
 import { ProfilePicture } from './_components/profile-picture';
+import { db } from '@/lib/db';
 
 interface Props {
     
@@ -8,7 +10,17 @@ interface Props {
 
 const SettingsPage = (props: Props) => {
 
-    // WIP: Wire up profille picture
+    const removeProfileImage = async () => {
+        'use server'
+        const response = await db.user.update({
+            where: {
+                clerkId: authUser.id,
+            },
+            data: {
+                profileImage:""
+            }
+        })
+    }
 
     return (
         <div className='flex flex-col gap-0'>
@@ -25,7 +37,11 @@ const SettingsPage = (props: Props) => {
                     Add or update your information
                 </p>
                 </div>
-                <ProfilePicture></ProfilePicture>
+                <ProfilePicture
+                    onDelete={removeProfileImage}
+                    userImage={user?.profileImage || ''}
+                    onUpload={uploadProfileImage}
+                ></ProfilePicture>
                 <ProfileForm></ProfileForm>
             </div>
             
