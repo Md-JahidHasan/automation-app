@@ -11,7 +11,7 @@ interface Props {
 const SettingsPage = (props: Props) => {
 
     const removeProfileImage = async () => {
-        'use server'
+        // 'use server'
         const response = await db.user.update({
             where: {
                 clerkId: authUser.id,
