@@ -17,7 +17,7 @@ const SettingsPage = (props: Props) => {
                 clerkId: authUser.id,
             },
             data: {
-                profileImage:
+                profileImage:''
             }
         })
     }
